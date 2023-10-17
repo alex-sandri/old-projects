@@ -1,0 +1,13 @@
+Options -Indexes
+
+RewriteEngine on
+
+RewriteRule ^folder/([a-zA-Z0-9]+)\/?$ ./account/?folder=$1 [L]
+RewriteRule ^file/([a-zA-Z0-9]+)\/?$ ./account/?file=$1 [L]
+
+RewriteRule ^folder/([a-zA-Z0-9]+)/download\/?$ ./download/?folder=$1 [L]
+RewriteRule ^file/([a-zA-Z0-9]+)/download\/?$ ./download/?file=$1 [L]
+
+<FilesMatch "\.(css|js|svg)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>

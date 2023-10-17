@@ -1,0 +1,21 @@
+{
+  "short_name": "Denvelope",
+  "name": "Denvelope",
+  "icons": [
+    {
+      "src": "assets/img/icons/app/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/img/icons/app/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#00172d",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#00172d"
+}

@@ -1,0 +1,50 @@
+header{
+    border-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &
+    .logo a,
+    .buttons a{
+        text-decoration: none;
+        color: var(--secondary-color);
+        font-weight: $black;
+        padding: 10px 20px;
+        display: inline-block;
+        transition: $transition-time;
+        font-size: 20px;
+        border-radius: $border-radius;
+    }
+
+    & .buttons{
+        color: var(--primary-color);
+
+        & a{
+            @include border-secondary;
+        }
+
+        & a:hover{
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        & a:first-child{
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+
+            &:hover{
+                background-color: var(--primary-color);
+                color: var(--secondary-color);
+            }
+        }
+
+        & a:last-child{
+            @include border-primary;
+
+            &:hover{
+                @include border-secondary;
+            }
+        }
+    }
+}

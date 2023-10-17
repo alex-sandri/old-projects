@@ -1,0 +1,40 @@
+.pwa-banner{
+    @include flex (
+        $justify-content: space-between
+    );
+
+    background-color: $secondary-color;
+    position: fixed;
+    bottom: $standard-spacing;
+    left: $standard-spacing;
+    width: calc(100% - (#{$standard-spacing} * 2));
+    padding: $standard-spacing;
+    border-radius: 5px;
+    z-index: 999;
+    color: $primary-color;
+    display: none;
+
+    button.dismiss-banner{
+        @include button (
+            $bg-color: $secondary-color,
+            $color: $primary-color,
+            $has-border: false,
+            $has-padding: false,
+            $hover-effect: none
+        );
+    }
+
+    p{
+        margin: 0;
+    }
+
+    button.install-pwa{
+        @include button (
+            $border-color: $primary-color
+        );
+
+        padding: 5px;
+        font-size: 15px;
+        float: right;
+    }
+}

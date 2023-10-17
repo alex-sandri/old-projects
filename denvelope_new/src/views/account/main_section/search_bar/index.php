@@ -1,0 +1,1 @@
+<div class="search-bar input"><input type="search" name="search" id="search" aria-label="Search bar" autocomplete="off" data-placeholder-translation="generic->search"></div>

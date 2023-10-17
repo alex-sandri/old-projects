@@ -1,0 +1,44 @@
+footer{
+    @include flex ($justify-content: space-between);
+
+    padding: $standard-spacing;
+    background-color: $secondary-color;
+
+    .copyright{
+        @include flex;
+
+        color: $primary-color;
+        margin-right: $standard-spacing;
+        font-weight: $black;
+
+        & span{
+            white-space: nowrap;
+
+            &:not(:last-child){
+                @include flex;
+
+                &::after{
+                    content: " ";
+                    white-space: pre;
+                }
+            }
+        }
+    }
+
+    .links{
+        @include flex (
+            $justify-content: space-evenly
+        );
+
+        width: 100%;
+
+        a{
+            text-decoration: none;
+            color: $primary-color;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

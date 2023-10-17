@@ -1,0 +1,27 @@
+.rust{
+    background-color: var(--header-color);
+    width: 50px;
+    height: 50px;
+}
+
+.macos,
+.ios{
+    background-color: var(--header-color);
+    width: 30px;
+    height: 30px;
+}
+
+.rust{
+    -webkit-mask-image: url("../img/icons/rust.svg");
+    mask-image: url("../img/icons/rust.svg");
+}
+
+.macos{
+    -webkit-mask-image: url("../img/icons/mac.svg");
+    mask-image: url("../img/icons/mac.svg");
+}
+
+.ios{
+    -webkit-mask-image: url("../img/icons/ios.svg");
+    mask-image: url("../img/icons/ios.svg");
+}

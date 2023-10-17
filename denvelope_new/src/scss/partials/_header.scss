@@ -1,0 +1,174 @@
+@import 'cookie-banner';
+@import 'pwa-banner';
+
+header
+{
+    @include flex($justify-content: space-between, $align-items: baseline);
+
+    background-color: rgba($color: $primary-color-rgb, $alpha: 0.8);
+    padding: $standard-spacing;
+    font-size: 25px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: $header-height-lg;
+    backdrop-filter: blur(20px);
+
+    &.no-padding-bottom
+    {
+        height: calc(#{$header-height-lg} - #{$standard-spacing});
+        padding-bottom: 0;
+    }
+
+    .logo
+    {
+        font-family: $font-family;
+        font-weight: $black;
+
+        a
+        {
+            @include flex;
+            
+            font-size: 0;
+            text-decoration: none;
+            
+            i,
+            span
+            {
+                color: $secondary-color;
+                font-size: 25px;
+            }
+
+            span
+            {
+                font-weight: $semi-bold;
+            }
+
+            & :not(:last-child)::after
+            {
+                content: " ";
+                white-space: pre;
+            }
+        }
+    }
+
+    nav
+    {
+        @include flex;
+
+        button
+        {
+            @include button($bg-color: transparent, $color: $secondary-color, $has-border: false, $has-padding: false, $hover-effect: underline);
+        }
+
+        &.logged-out button:last-child
+        {
+            margin-left: $standard-spacing;
+        }
+
+        .menu
+        {
+            @include flex ($flex-direction: column, $align-items: unset);
+
+            display: none;
+            border: $border-width solid $secondary-color;
+            border-radius: $border-radius;
+            position: absolute;
+            top: $header-height-lg;
+            right: $standard-spacing;
+            z-index: 999;
+            background-color: $primary-color;
+            padding: $standard-spacing;
+
+            a,
+            button
+            {
+                font-size: 20px;
+                color: $secondary-color;
+                text-decoration: none;
+                transition: $transition-time;
+                padding: 10px;
+                border: $border-width solid $primary-color;
+                border-radius: $border-radius;
+                text-align: start;
+
+                p
+                {
+                    margin: 0;
+                    display: inline-block;
+                }
+
+                &:hover
+                {
+                    background-color: $secondary-color;
+                    color: $primary-color;
+                    text-decoration: none;
+                }
+            }
+
+            hr
+            {
+                margin: $standard-spacing 0;
+                border: 1px solid $secondary-color;
+                width: calc(100% + #{$standard-spacing * 2});
+                position: relative;
+                left: -$standard-spacing;
+            }
+
+            .user
+            {
+                .img-container
+                {
+                    margin-bottom: $standard-spacing;
+
+                    img
+                    {
+                        height: 60px;
+
+                        &:last-of-type
+                        {
+                            float: right;
+                            height: 35px;
+                        }
+                    }
+                }
+
+                p
+                {
+                    margin: 0;
+                    font-weight: $black;
+
+                    &:last-child
+                    {
+                        font-weight: $light;
+                        font-size: 20px;
+                        margin-bottom: $standard-spacing;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-toggle
+    {
+        button
+        {
+            @include flex;
+            @include button($bg-color: transparent, $color: $secondary-color, $has-border: false, $has-padding: false, $hover-effect: none);
+
+            font-size: 25px;
+
+            i
+            {
+                @include flex;
+            }
+        }
+
+        &:not(.logged-in) // Hides the button to open the menu if not logged in (only on mobile this needs to be shown)
+        {
+            display: none;
+        }
+    }
+}

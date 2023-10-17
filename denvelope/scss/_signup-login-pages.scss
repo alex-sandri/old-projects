@@ -1,0 +1,45 @@
+html.signup-login-page{
+    body{
+        display: flex;
+        margin-top: 2vw;
+    }
+    
+    #signup-form, #login-form, #forgot-password-form, #new-password-form, #contact-form{
+        display: block;
+        background-image: none;
+        width: 30%;
+        margin: 0 auto;
+    }
+    
+    @media only all and (max-width: 1200px){
+        #signup-form, #login-form, #forgot-password-form, #new-password-form, #contact-form{
+            width: 50%;
+        }
+    }
+    
+    @media only all and (max-width: 750px){
+        #signup-form, #login-form, #forgot-password-form, #new-password-form, #contact-form{
+            width: 75%;
+        }
+    }
+    
+    @media only all and (max-width: 450px){
+        #signup-form, #login-form, #forgot-password-form, #new-password-form, #contact-form{
+            width: 85%;
+        }
+    }
+    
+    @media only all and (max-width: 300px){
+        #signup-form, #login-form, #forgot-password-form, #new-password-form, #contact-form{
+            width: 95%;
+        }
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    
+    a:hover:not(#header a){
+        text-decoration: underline;
+    }
+}

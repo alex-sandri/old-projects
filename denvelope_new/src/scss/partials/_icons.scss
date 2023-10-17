@@ -1,0 +1,38 @@
+.icon{
+    @include language-icon ($languages: (
+        // LANGUAGES
+        c,
+        coffeescript,
+        cpp,
+        csharp,
+        css,
+        go,
+        html,
+        java,
+        javascript,
+        mongodb,
+        mysql,
+        nodejs,
+        php,
+        postgresql,
+        python,
+        ruby,
+        rust,
+        // PLATFORMS AND TOOLS
+        angular,
+        aws,
+        azure,
+        digitalocean,
+        docker,
+        drupal,
+        firebase,
+        gcp,
+        kubernetes,
+        react,
+        vue,
+        wordpress,
+        // GENERIC
+        folder,
+        file,
+    ));
+}

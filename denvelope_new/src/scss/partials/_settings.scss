@@ -1,0 +1,176 @@
+.settings-section
+{
+    width: calc(100% - (#{$standard-spacing} * 2));
+    margin: 0 $standard-spacing;
+    display: none;
+
+    & > h1
+    {
+        font-size: 35px;
+        margin: $standard-spacing 0;
+    }
+
+    .setting
+    {
+        @include flex($justify-content: space-between);
+        
+        padding: $standard-spacing;
+        border: $border-width solid $primary-color;
+        border-radius: $border-radius;
+        transition: $transition-time;
+        cursor: pointer;
+
+        h2
+        {
+            margin: 0;
+            margin-right: $standard-spacing;
+            font-weight: $light;
+        }
+
+        div
+        {
+            @include flex;
+            
+            p
+            {
+                margin: 0;
+                margin-right: $standard-spacing;
+            }
+    
+            button:not(.delete-account-button),
+            a
+            {
+                @include button($has-padding: false, $has-border: false, $hover-effect: no-text-decoration);
+
+                text-decoration: underline;
+            }
+        }
+
+        .input,
+        .input-with-icon,
+        select,
+        .checkbox-container,
+        & > button
+        {
+            display: none;
+        }
+
+        &:hover
+        {
+            border-color: $secondary-color;
+        }
+
+        &:not(:last-child)
+        {
+            margin-bottom: $standard-spacing;
+        }
+    }
+
+    .privacy-message
+    {
+        background-color: $secondary-color;
+        color: $primary-color;
+        padding: $standard-spacing;
+        margin: $standard-spacing 0;
+        border-radius: $border-radius;
+        font-size: 12px;
+
+        p
+        {
+            margin: 0;
+        }
+    }
+
+    @at-root .delete-account-button
+    {
+        @include button($bg-color: #fa4b4b, $color: white, $border-color: #fa4b4b, $hover-effect: underline);
+    
+        text-decoration: none;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        &.confirm
+        {
+            margin-bottom: $standard-spacing;
+            width: 100%;
+        }
+    }
+
+    .plan-container
+    {
+        @include flex;
+
+        margin-bottom: $standard-spacing;
+
+        .plan
+        {
+            @include flex($justify-content: space-between, $flex-direction: column);
+
+            background-color: $primary-color;
+            color: $secondary-color;
+            border: $border-width solid $secondary-color;
+            transition: $transition-time;
+            padding: $standard-spacing;
+            border-radius: $border-radius;
+            text-align: center;
+            width: 50%;
+
+            h1,
+            .price
+            {
+                margin: 0;
+            }
+
+            h1
+            {
+                margin-bottom: $standard-spacing;
+                font-weight: $semi-bold;
+            }
+
+            &.price
+            {
+                font-size: 25px;
+                font-weight: $semi-bold;
+            }
+
+            &.selected,
+            &.current
+            {
+                background-color: $secondary-color;
+                color: $primary-color;
+            }
+
+            &:hover:not(.custom-plan)
+            {
+                background-color: $secondary-color;
+                color: $primary-color;
+
+                cursor: pointer; // Added here to avoid overriding it for the .custom-plan
+            }
+
+            &:not(:first-child):not(:last-child)
+            {
+                border-radius: 0;
+                border-left: 0;
+            }
+    
+            &:first-child
+            {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+    
+            &:last-child:not(.custom-plan)
+            {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-left: 0;
+            }
+        }
+    }
+
+    &.selected
+    {
+        display: block;
+    }
+}

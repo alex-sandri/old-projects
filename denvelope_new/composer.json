@@ -1,0 +1,7 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "^3.112",
+        "brick/math": "^0.8.8",
+        "bref/bref": "^0.5.11"
+    }
+}

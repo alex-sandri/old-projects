@@ -1,0 +1,1 @@
+<span class="spinner"><i class="fas fa-circle-notch"></i></span>

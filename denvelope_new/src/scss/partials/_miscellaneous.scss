@@ -1,0 +1,378 @@
+.modal
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border: $border-width solid $secondary-color;
+    width: 100%;
+    padding: $standard-spacing;
+    border-top-left-radius: $standard-spacing;
+    border-top-right-radius: $standard-spacing;
+    background-color: $secondary-color;
+    z-index: 11;
+    transform: translateY(calc(100% + #{$standard-spacing}));
+    color: $primary-color;
+    max-height: calc(100vh - #{$header-height-lg});
+    overflow: auto;
+
+    .content
+    {
+        user-select: text;
+    }
+
+    .title,
+    .subtitle
+    {
+        margin-top: 0;
+        margin-bottom: $standard-spacing;
+        user-select: none;
+    }
+
+    p:not(.input-error):not(.password-strength-text)
+    {
+        margin: 0;
+        margin-bottom: $standard-spacing;
+
+        & > span:first-child
+        {
+            font-weight: $bold;
+            display: block;
+        }
+
+        &:last-child
+        {
+            @include flex($align-items: unset, $justify-content: unset);
+
+            padding: 5px;
+            border: $border-width solid $primary-color;
+            border-radius: $border-radius;
+            background-color: $primary-color;
+
+            & > span
+            {
+                @include flex;
+
+                &:first-child
+                {
+                    color: $secondary-color;
+                    padding: $standard-spacing;
+                    border-radius: $border-radius;
+                }
+            }
+        }
+    }
+
+    .input
+    {
+        @include input-container($bg-color: $secondary-color, $color: $primary-color, $has-icon: false);
+    }
+
+    .input-with-icon
+    {
+        @include input-container($bg-color: $secondary-color, $color: $primary-color);
+
+        input
+        {
+            margin-bottom: 0;
+        }
+    }
+
+    .tag-list{
+        @include flex;
+
+        flex-wrap: wrap;
+
+        .tag{
+            @include flex;
+            
+            color: $secondary-color;
+            border-radius: $border-radius;
+            padding: 2px 5px;
+            border: $border-width solid $secondary-color;
+            margin: 2px;
+
+            i{
+                width: 30px;
+                height: 30px;
+                padding: unset;
+                background-color: unset;
+                border-radius: unset;
+            }
+        }
+    }
+
+    .close-button,
+    .update-button,
+    .confirm-button
+    {
+        @include button ($border-color: $primary-color);
+
+        display: none;
+        width: 100%;
+    }
+
+    .update-button,
+    .confirm-button
+    {
+        margin: $standard-spacing 0;
+    }
+
+    &.show
+    {
+        animation: account-modal-show 100ms linear forwards;
+
+        &.no-animate
+        {
+            animation: account-modal-show 0ms linear forwards;
+        }
+    }
+
+    &.hide
+    {
+        animation: account-modal-hide 100ms linear forwards;
+
+        &.no-animate
+        {
+            animation: account-modal-hide 0ms linear forwards;
+        }
+    }
+
+    &.floating
+    {
+        bottom: $standard-spacing;
+        left: $standard-spacing;
+        width: calc(100% - (#{$standard-spacing} * 2));
+        border-radius: $standard-spacing;
+    }
+}
+
+.spinner{
+    font-size: 40px;
+    margin: $standard-spacing;
+    display: block;
+    text-align: center;
+
+    i{
+        @include animation (
+            $name: rotate,
+            $duration: 1s,
+            $timing-function: linear,
+            $iteration-count: infinite,
+        );
+    }
+}
+
+.input,
+.input-with-icon
+{
+    @include flex($align-items: unset, $justify-content: unset);
+    @include input-container;
+
+    margin-bottom: $standard-spacing;
+
+    input
+    {
+        width: 100%;
+    }
+}
+
+.input
+{
+    @include input-container($has-icon: false);
+}
+
+.input-error
+{
+    margin: 0;
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: $standard-spacing;
+    text-align: center;
+    margin-bottom: $standard-spacing;
+    border-radius: $border-radius;
+}
+
+select
+{
+    background-color: $secondary-color;
+    color: $primary-color;
+    border: $border-width solid $primary-color;
+    border-radius: $border-radius;
+    padding: 9px;
+    cursor: pointer;
+    transition: $transition-time;
+    margin-bottom: $standard-spacing;
+    width: 100%;
+    font-family: $font-family;
+    font-size: 20px;
+
+    &:hover
+    {
+        background-color: $primary-color;
+        color: $secondary-color;
+    }
+}
+
+.checkbox-container
+{
+    @include flex ($justify-content: unset);
+
+    input[type=checkbox]
+    {
+        @include checkbox ($bg-color: $secondary-color, $color: $primary-color);
+    }
+}
+
+.context-menu
+{
+    border: $border-width solid $secondary-color;
+    position: fixed;
+    border-radius: $border-radius;
+    z-index: 999;
+    background-color: $primary-color;
+    display: none;
+
+    button
+    {
+        @include button ($has-border: false, $has-border-radius: false);
+
+        display: block;
+        width: 100%;
+        text-align: start;
+    }
+}
+
+.generic-message
+{
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: $standard-spacing;
+    background-color: $secondary-color;
+    z-index: 999;
+
+    p
+    {
+        margin: 0;
+        color: $primary-color;
+        text-align: center;
+        font-weight: $bold;
+    }
+}
+
+.show-file
+{
+    display: none;
+    position: absolute;
+    top: $header-height-lg;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: calc(100vh - #{$header-height-lg});
+    overflow: hidden;
+
+    .editor-head
+    {
+        @include flex($justify-content: space-between);
+
+        background-color: $primary-color;
+        padding: $standard-spacing;
+
+        .name
+        {
+            @include text-ellipsis-on-overflow;
+
+            margin: 0;
+            margin-right: $standard-spacing;
+        }
+
+        .menu,
+        .close
+        {
+            @include button;
+        }
+    }
+
+    .editor
+    {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.upload-progress-bar
+{
+    height: 5px;
+    background-color: $primary-color;
+    display: block;
+    margin-bottom: $standard-spacing;
+    border-radius: $border-radius;
+    width: 0%;
+    transition: $transition-time;
+}
+
+.password-strength
+{
+    font-size: 12px;
+    margin-top: -$standard-spacing;
+    display: block;
+        
+    p
+    {
+        margin: 0;
+    }
+        
+    span
+    {
+        height: 5px;
+        border: $border-width / 2 solid $primary-color;
+        width: 100%;
+        display: block;
+        background-color: $primary-color;
+        margin-bottom: $standard-spacing;
+        border-radius: $border-radius;
+        transition: $transition-time;
+    }
+}
+
+#firebaseui-auth-container
+{
+    .firebaseui-container
+    {
+        max-width: unset !important;
+
+        .firebaseui-card-content
+        {
+            padding: unset !important;
+
+            .firebaseui-idp-list
+            {
+                @include flex($flex-wrap: wrap);
+
+                //gap: $standard-spacing; Until gap for flexbox is widely supported
+
+                margin: #{$standard-spacing} 0 #{-$standard-spacing} #{-$standard-spacing};
+
+                .firebaseui-list-item
+                {
+                    margin-bottom: 0;
+                    padding-left: $standard-spacing;
+                    padding-bottom: $standard-spacing;
+
+                    .firebaseui-idp-button
+                    {
+                        border-radius: $border-radius;
+                    }
+                }
+            }
+        }
+
+        .firebaseui-tos
+        {
+            margin: 0;
+            margin-top: $standard-spacing;
+        }
+    }
+}

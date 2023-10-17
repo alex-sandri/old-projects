@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900&display=swap');
+
+$font-family: 'Source Code Pro', monospace;
+
+$primary-color-value: #160c28;
+$primary-color-rgb-value: red($primary-color-value), green($primary-color-value), blue($primary-color-value);
+
+$secondary-color-value: #efcb68;
+$secondary-color-rgb-value: red($secondary-color-value), green($secondary-color-value), blue($secondary-color-value);
+
+$thin: 100;
+$extra-light: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$black: 900;
+
+$border-width: 2px;
+$border-radius: 5px;
+
+$transition-time: 300ms;
+
+$standard-spacing: 15px;
+
+$box-shadow-blur-radius: 10px;
+
+$header-height-lg: 62px; // > 600px
+$header-height-md: 55px; // <= 600px
+
+:root
+{
+    --font-family: #{$font-family};
+
+    --primary-color: #{$primary-color-value};
+    --primary-color-rgb: #{$primary-color-rgb-value};
+
+    --secondary-color: #{$secondary-color-value};
+    --secondary-color-rgb: #{$secondary-color-rgb-value};
+
+    --standard-spacing: #{$standard-spacing};
+
+    @media (prefers-color-scheme: light)
+    {
+        --primary-color: #{$secondary-color-value};
+        --primary-color-rgb: #{$secondary-color-rgb-value};
+
+        --secondary-color: #{$primary-color-value};
+        --secondary-color-rgb: #{$primary-color-rgb-value};
+    }
+}
+
+$font-family: var(--font-family);
+
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+
+$primary-color-rgb: var(--primary-color-rgb);
+$secondary-color-rgb: var(--secondary-color-rgb);

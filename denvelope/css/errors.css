@@ -1,0 +1,101 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url("../img/humaaans/sitting-2.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+h1{
+    font-size: 170px;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+}
+
+p{
+    font-size: 70px;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-light);
+    margin: 0;
+    text-align: center;
+}
+
+#link-container{
+    border: 2px solid var(--text-color);
+    font-size: 0;
+    margin-top: 5vw;
+}
+
+a{
+    color: var(--header-color);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
+    text-decoration: none;
+    padding: 20px;
+    background-color: var(--text-color);
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 15px;
+    transition: 300ms;
+}
+
+a:hover{
+    color: var(--text-color);
+    background-color: var(--header-color);
+}
+
+@media only all and (max-width: 500px){
+    h1{
+        font-size: 130px
+    }
+
+    p{
+        font-size: 50px;
+    }
+
+    a{
+        padding: 10px;
+    }
+}
+
+@media only all and (max-width: 350px){
+    h1{
+        font-size: 100px
+    }
+
+    p{
+        font-size: 35px;
+    }
+
+    a{
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+@media only all and (max-width: 250px){
+    h1{
+        font-size: 70px
+    }
+
+    p{
+        font-size: 25px;
+    }
+
+    #link-container{
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 4px - 10vw);
+    }
+
+    a{
+        text-align: center;
+    }
+}

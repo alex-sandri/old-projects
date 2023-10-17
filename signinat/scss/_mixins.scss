@@ -1,0 +1,7 @@
+@mixin border-primary {
+    border: $border-width solid var(--primary-color);
+}
+
+@mixin border-secondary {
+    border: $border-width solid var(--secondary-color);
+}

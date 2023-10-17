@@ -1,0 +1,22 @@
+#terms, #privacy, #cookie{
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 5vw;
+}
+
+#terms a, #privacy a, #cookie a{
+    color: var(--form-change-text-color);
+}
+
+#terms a:hover, #privacy a:hover, #cookie a:hover{
+    text-decoration: none;
+}
+
+#terms{
+    counter-reset: n;
+}
+
+#terms h3::before{
+    content: counter(n);
+    counter-increment: n;
+}

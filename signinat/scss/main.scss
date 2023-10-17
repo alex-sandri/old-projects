@@ -1,0 +1,11 @@
+@import 'variables';
+@import 'mixins';
+
+@import 'header';
+
+body{
+    margin: 15px;
+    font-family: $font-family;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}

@@ -1,0 +1,154 @@
+.account-main
+{
+    width: calc(100% - (100% / 5) - (#{$standard-spacing} * 2));
+    margin: 0 $standard-spacing;
+    margin-top: $header-height-lg;
+
+    .icons8-message
+    {
+        margin: 0;
+        font-size: 12px;
+        position: fixed;
+        bottom: 0;
+        transform: rotate(-90deg) translateX(5px);
+        transform-origin: left bottom;
+
+        img
+        {
+            width: $standard-spacing;
+            vertical-align: bottom;
+        }
+
+        a
+        {
+            color: $secondary-color;
+
+            &:hover
+            {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .search-bar
+    {
+        @include input-container($has-icon: false);
+
+        position: fixed;
+        width: inherit;
+        z-index: 1;
+
+        input
+        {
+            width: 100%;
+        }
+    }
+
+    .empty-folder{
+        @include flex ($flex-direction: column);
+
+        margin-top: $standard-spacing * 2;
+        display: none;
+
+        img{
+            width: 30%;
+        }
+    }
+
+    .user-content{
+        position: relative;
+        top: calc(49px + #{$standard-spacing}); /* The first value is the search bar height */
+
+        .back-button{
+            @include button;
+
+            display: none;
+            margin-bottom: $standard-spacing;
+        }
+
+        .folders-container,
+        .files-container{
+            @include flex ($justify-content: unset, $align-items: unset, $flex-wrap: wrap);
+
+            & + .load-more{
+                @include button ($bg-color: $secondary-color, $color: $primary-color);
+
+                width: 100%;
+                display: none;
+                margin-bottom: $standard-spacing;
+            }
+
+            & > .file{
+                .name{
+                    background-color: $primary-color;
+                    color: $secondary-color;
+                }
+            }
+
+            & > .folder,
+            & > .file{
+                @include flex ($align-items: unset, $justify-content: space-between, $flex-wrap: nowrap);
+
+                background-color: $secondary-color;
+                color: $primary-color;
+                border: $border-width solid $secondary-color;
+                border-radius: $border-radius;
+                flex: 1 1 calc((100% / 3) - (#{$standard-spacing} * 2 / 3));
+                min-width: calc((100% / 3) - (#{$standard-spacing} * 2 / 3));
+                cursor: pointer;
+                margin-bottom: $standard-spacing;
+                
+                transition: box-shadow $transition-time;
+
+                .icon{
+                    @include flex;
+                }
+
+                .name{
+                    @include flex ($justify-content: unset);
+
+                    margin: 0 0 0 $border-width;
+                    width: 100%;
+                    overflow: hidden;
+                    transition: $transition-time;
+                    border-radius: $border-radius;
+                    padding: 10px;
+                    border: $border-width solid $primary-color;
+
+                    p{
+                        @include text-ellipsis-on-overflow;
+
+                        margin: 0;
+                    }
+                }
+
+                .menu-button{
+                    @include flex ($align-items: unset);
+
+                    button{
+                        @include button ($border-color: $primary-color);
+    
+                        margin-left: $border-width;
+                    }
+                }
+
+                &:nth-child(3n + 2){
+                    margin-left: $standard-spacing;
+                }
+
+                &:nth-child(3n + 2):not(:last-child){
+                    margin-right: $standard-spacing;
+                }
+
+                &:hover{
+                    box-shadow: 0 0 10px $secondary-color;
+                }
+            }
+        }
+
+        .edit-info
+        {
+            display: none;
+        }
+    }
+}
