@@ -1,0 +1,9 @@
+C:\Users\Alex Sandri\Documents\C# Projects\Tris\Tris\bin\Debug\Tris.exe.config
+C:\Users\Alex Sandri\Documents\C# Projects\Tris\Tris\bin\Debug\Tris.exe
+C:\Users\Alex Sandri\Documents\C# Projects\Tris\Tris\bin\Debug\Tris.pdb
+C:\Users\Alex Sandri\Documents\C# Projects\Tris\Tris\obj\Debug\Tris.csprojAssemblyReference.cache
+C:\Users\Alex Sandri\Documents\C# Projects\Tris\Tris\obj\Debug\Tris.Form1.resources
+C:\Users\Alex Sandri\Documents\C# Projects\Tris\Tris\obj\Debug\Tris.Properties.Resources.resources
+C:\Users\Alex Sandri\Documents\C# Projects\Tris\Tris\obj\Debug\Tris.csproj.GenerateResource.cache
+C:\Users\Alex Sandri\Documents\C# Projects\Tris\Tris\obj\Debug\Tris.exe
+C:\Users\Alex Sandri\Documents\C# Projects\Tris\Tris\obj\Debug\Tris.pdb

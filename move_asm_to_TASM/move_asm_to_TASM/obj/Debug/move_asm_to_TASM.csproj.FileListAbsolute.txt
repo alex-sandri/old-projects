@@ -1,0 +1,7 @@
+C:\Users\Alex Sandri\Documents\C# Projects\move_asm_to_TASM\move_asm_to_TASM\bin\Debug\move_asm_to_TASM.exe.config
+C:\Users\Alex Sandri\Documents\C# Projects\move_asm_to_TASM\move_asm_to_TASM\bin\Debug\move_asm_to_TASM.exe
+C:\Users\Alex Sandri\Documents\C# Projects\move_asm_to_TASM\move_asm_to_TASM\bin\Debug\move_asm_to_TASM.pdb
+C:\Users\Alex Sandri\Documents\C# Projects\move_asm_to_TASM\move_asm_to_TASM\obj\Debug\move_asm_to_TASM.csprojAssemblyReference.cache
+C:\Users\Alex Sandri\Documents\C# Projects\move_asm_to_TASM\move_asm_to_TASM\obj\Debug\move_asm_to_TASM.csproj.CoreCompileInputs.cache
+C:\Users\Alex Sandri\Documents\C# Projects\move_asm_to_TASM\move_asm_to_TASM\obj\Debug\move_asm_to_TASM.exe
+C:\Users\Alex Sandri\Documents\C# Projects\move_asm_to_TASM\move_asm_to_TASM\obj\Debug\move_asm_to_TASM.pdb
